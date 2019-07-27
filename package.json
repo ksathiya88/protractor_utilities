@@ -1,0 +1,35 @@
+{
+  "name": "protractor_utilities",
+  "version": "1.0.0",
+  "description": "protractor utility functions",
+  "main": "dist/actions.js",
+  "types": "dist/actions.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prepare": "npm run build",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksathiya88/protractor_utilities.git"
+  },
+  "keywords": ["protractor", "utilities"],
+  "files": ["dist/**/*"],
+  "author": "karthik sathiyamurthy<karthik.sathiyamurthy@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ksathiya88/protractor_utilities/issues"
+  },
+  "homepage": "https://github.com/ksathiya88/protractor_utilities#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "protractor": "^5.4.2",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/node": "^12.6.8"
+  }
+}
