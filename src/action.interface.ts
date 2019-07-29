@@ -13,3 +13,9 @@ export interface IElement {
   location: ILocRef;
   value: string;
 }
+
+export enum IValueTypes {
+  Value = "value",
+  CheckValue = "checkValue",
+  Location = "location"
+}

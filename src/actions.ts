@@ -1,7 +1,48 @@
 import { promise as wdpromise } from "selenium-webdriver";
 import { element, by, protractor, browser, ElementFinder } from "protractor";
-import { LocationTypes, IElement, ILocRef } from "./action.interface";
+import {
+  LocationTypes,
+  IElement,
+  ILocRef,
+  IValueTypes
+} from "./action.interface";
 import { assert } from "chai";
+import * as XLSX from "xlsx";
+export { LocationTypes, IElement, ILocRef, IValueTypes };
+
+export function readExcel(type: IValueTypes, fileName: string) {
+  const workbook = XLSX.readFile(fileName);
+  const locSheet = workbook.SheetNames[0];
+  const valSheet = workbook.SheetNames[1];
+  const checkValSheet = workbook.SheetNames[2];
+  const obj: any = {};
+  if (type === IValueTypes.Value || type === IValueTypes.CheckValue) {
+    let sheet = valSheet;
+    if (type === IValueTypes.CheckValue) {
+      sheet = checkValSheet;
+    }
+    const val: any = XLSX.utils.sheet_to_json(workbook.Sheets[sheet]);
+    val.forEach((rowObj: { PROPERTYKEY: string; PROPERTYVALUE: any }) => {
+      obj[rowObj.PROPERTYKEY] = rowObj.PROPERTYVALUE;
+    });
+  } else if (type === IValueTypes.Location) {
+    const val: any = XLSX.utils.sheet_to_json(workbook.Sheets[locSheet]);
+    val.forEach(
+      (rowObj: {
+        PROPERTYKEY: string;
+        LOCATIONTYPE: any;
+        LOCATIONVALUE: any;
+      }) => {
+        obj[rowObj.PROPERTYKEY] = {
+          type: rowObj.LOCATIONTYPE,
+          value: rowObj.LOCATIONVALUE
+        };
+      }
+    );
+  }
+  return obj;
+}
+
 export function setElement(
   location: ILocRef,
   value: string
