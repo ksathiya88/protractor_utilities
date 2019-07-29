@@ -8,18 +8,18 @@ For setting or checking the element just need to provide location in the format 
 element can be identified by xpath or id or class and the specifier means id or xpath or class reference)
 and value you are interested in.
 
-> `interface ILocRef` {
-> type: LocationTypes;
-> value: string;
-> }
+> `interface ILocRef` {  
+> type: LocationTypes;  
+> value: string;  
+> }  
 
 In this above case LocationTypes is enum as specified below
 
-> `enum LocationTypes`{
-> Id = "id",
-> Xpath = "xpath",
-> Class = "class"
-> }
+> `enum LocationTypes`{  
+> Id = "id",  
+> Xpath = "xpath",  
+> Class = "class"  
+> }  
 
 So the type in ILocRef can be either "id" or "xpath" or "class"
 and the value is the corresponding specifier.
@@ -37,24 +37,23 @@ Say i want to set the username as "abc"
 
 ## usuage in Typescript:
 
-> **import {
-> setElement,
-> setValues,
-> checkElement,
-> checkValues,
-> elemClick,
-> waitUntillLoaded,
-> waitUntillEnabled,
-> readExcel
-> } from "protractor_utility";**
+> **import {  
+> setElement,  
+> setValues,  
+> checkElement,  
+> checkValues,  
+> elemClick,  
+> waitUntillLoaded,  
+> waitUntillEnabled,  
+> readExcel  
+> } from "protractor_utility";**  
 
 _Interface Type Exported:_
 
-> \*\*import {
-
-    ILocRef,
-    LocationTypes,
-    IValueTypes } from "protractor_utility";**
+> **import {  
+    ILocRef,  
+    LocationTypes,  
+    IValueTypes } from "protractor_utility";**  
 
 ## Enums Exported
 
