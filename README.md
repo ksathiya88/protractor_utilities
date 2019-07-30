@@ -38,7 +38,7 @@ Say i want to set the username as "abc"
 
 ## usuage in Typescript:   
         
-> import {  
+> **import {  
 > setElement,  
 > setValues,  
 > checkElement,  
@@ -47,14 +47,14 @@ Say i want to set the username as "abc"
 > waitUntillLoaded,  
 > waitUntillEnabled,  
 > readExcel  
-> } from "protractor_utility";
+> } from "protractor_utility";**
            
 _Interface Type Exported:_       
            
-> import {   
+> **import {   
     ILocRef,  
     LocationTypes,   
-    IValueTypes } from "protractor_utility";         
+    IValueTypes } from "protractor_utility";**            
       
 ## Enums Exported
        
@@ -165,8 +165,9 @@ It will set value only for elements which is present in both.
 _For checking single value in loginPage_.
 **Example:** For instance checking the username value set is "abc"
 
-> `**checkElement**({ type: LocationTypes.Xpath, value: '//*[@id="username"]' },   
-   "abc");`  
+> **checkElement**(    
+   { type: LocationTypes.Xpath, value: '//*[@id="username"]' },     
+   "abc");     
 
 ### checkValues
       
