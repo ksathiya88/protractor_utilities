@@ -8,36 +8,37 @@ For setting or checking the element just need to provide location in the format 
 element can be identified by xpath or id or class and the specifier means id or xpath or class reference)      
 and value you are interested in.       
 
-> `interface ILocRef` {  
-> type: LocationTypes;  
-> value: string;  
+> interface **ILocRef** {  
+> type: **LocationTypes**;  
+> value: **string**;  
 > }  
 
 In this above case LocationTypes is enum as specified below
 
-> `enum LocationTypes`{  
-> Id = "id",  
-> Xpath = "xpath",  
-> Class = "class"  
+> enum **LocationTypes**{  
+> **Id** = "id",  
+> **Xpath** = "xpath",  
+> **Class** = "class"  
 > }  
 
-So the type in ILocRef can be either "id" or "xpath" or "class"          
+So the type in ILocRef can be either **"id"** or **"xpath"** or **"class"**          
 and the value is the corresponding specifier.      
             
 So if you want to set the location for username the location will be provided          
 as          
 
-> `{ type: LocationTypes.Xpath, value: '//*[@id="username"]' }`          
+> { type: **LocationTypes.Xpath**, value: **'//*[@id="username"]'** }              
 
 in this case we are setting the username through the xpath reference.           
 
 Say i want to set the username as "abc"          
 
-> `setElement({ type: LocationTypes.Xpath, value: '//*[@id="username"]' },"abc");`      
+> setElement({ type: **LocationTypes.Xpath**,     
+   value: **'//*[@id="username"]'** },**"abc"**);          
 
 ## usuage in Typescript:   
         
-> **import {  
+> import {  
 > setElement,  
 > setValues,  
 > checkElement,  
@@ -46,45 +47,45 @@ Say i want to set the username as "abc"
 > waitUntillLoaded,  
 > waitUntillEnabled,  
 > readExcel  
-> } from "protractor_utility";**  
+> } from "protractor_utility";
            
 _Interface Type Exported:_       
            
-> **import {   
+> import {   
     ILocRef,  
     LocationTypes,   
-    IValueTypes } from "protractor_utility";**     
+    IValueTypes } from "protractor_utility";         
       
 ## Enums Exported
        
 _Enums Used for specifying the location of the element by which the    
 element can be identified by xpath or id or class_     
         
-> **export enum LocationTypes {     
-> Id = "id",  
-> Xpath = "xpath",    
-> Class = "class"   
-> }**     
+> export enum **LocationTypes** {     
+> **Id** = "id",  
+> **Xpath** = "xpath",    
+> **Class** = "class"   
+> }     
 
 _Enums Used in reading from the Excel sheet.Used for    
 specifying what it needs to read Value or Location or    
 CheckValue parameters from Excel Sheet_    
      
-> **export enum IValueTypes {    
-> Value = "value",    
-> CheckValue = "checkValue",   
-> Location = "location"    
-> }**     
+> export enum **IValueTypes** {    
+> **Value** = "value",    
+> **CheckValue** = "checkValue",   
+> **Location** = "location"    
+> }     
 
 ## Interfaces Exported    
        
 _Defines the format for providing the identification     
 of the Element_      
      
-> **export interface ILocRef {   
-> type: LocationTypes;   
-> value: string;   
-> }**   
+> export interface **ILocRef** {   
+> type: **LocationTypes**;   
+> value: **string**;   
+> }    
       
 _Defines the complete structure for setting the value in the     
 Element.location defines the parameters for the identification of the     
