@@ -209,3 +209,30 @@ This may happen in the case when Submit button is enabled only after the usernam
 and password is entered.     
 
 > **waitUntillEnabled**(loginPageIds.submit)    
+
+
+### readExcel
+In the above, loginPageIds, loginPageValues and loginPageCheckValues we actually provided.  
+But these values can also be read from a Excel file by specifying in a prescribed format.   
+__To provide the ids and values from a excel sheet__   
+
+Example: 
+export const **loginPageIds**: ILoginPage<ILocRef> = readExcel(
+  IValueTypes.Location,
+  "./e2e/values/login.xlsx"
+);
+First param will be what we trying to retrieve location or Value or CheckValue
+defined by the enum IValueTypes.            
+Second param will be the path of the Excel sheet where we have saved the value.
+            
+ Example: [a link](https://github.com/user/repo/blob/branch/other_file.md)
+            
+            
+            
+            
+            
+            
+     
+            
+            
+            
