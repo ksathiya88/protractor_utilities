@@ -215,41 +215,40 @@ and password is entered.
 In the above, loginPageIds, loginPageValues and loginPageCheckValues we actually provided.  
 But these values can also be read from a Excel file by specifying in a prescribed format.   
 __To provide the ids and values from a excel sheet__   
-
+                 
 Example: 
 **For giving ids through Excel**
 > export const **loginPageIds**: ILoginPage<ILocRef> = readExcel(   
-  IValueTypes.Location,   
-  "./e2e/values/login.xlsx"   
+  **IValueTypes.Location**,   
+  **"./e2e/values/login.xlsx"**   
 );   
             
 First param will be what we trying to retrieve location or Value or CheckValue   
 defined by the enum IValueTypes.               
 Second param will be the path of the Excel sheet where we have saved the value.         
-
+                 
  These conditions need to be followed in excel sheet:
- - In this excel sheet providing values
-   First sheet need to be the location
-   Second sheet need to be providing value
-   Third sheet need to be providing chechValues.
+ - In this excel sheet providing values       
+   First sheet need to be the location     
+   Second sheet need to be providing value         
+   Third sheet need to be providing checkValues.         
  **This order needs to be maintained as this is temporarily hardcoded
- in library.**
+ in library.**        
  
  - Also for location need to be provided under headers **PROPERTYKEY,LOCATIONTYPE,LOCATIONVALUE**
  - For Value and CheckValues need to be provided under headers **PROPERTYKEY,PROPERTYVALUE**
-
- 
+                     
 **For giving value through Excel**
 > export const **loginPageValues**: ILoginPage<string> = readExcel(    
-  IValueTypes.Value,    
-  "./e2e/values/login.xlsx"    
+  **IValueTypes.Value**,    
+  **"./e2e/values/login.xlsx"**    
 );    
-            
+                                
 **For giving Check value through Excel**
 
 > export const **loginPageCheckValues** = readExcel(   
-  IValueTypes.CheckValue,   
-  "./e2e/values/login.xlsx"    
+  **IValueTypes.CheckValue**,   
+  **"./e2e/values/login.xlsx"**    
 );     
 
 Example refer to this Excel for providing values:
@@ -257,16 +256,27 @@ Example refer to this Excel for providing values:
       
 
 ## For the complete example refer to this folder:    
-[example](https://github.com/ksathiya88/Angular_Learning/blob/master/e2e)
-
-Also use this Angular project for running the protractor test
-[project](https://github.com/ksathiya88/Angular_Learning)
-Starting the Angular project
-- clone the project ,
-- move to the folder and do npm install
-- ng serve to start the project
-Running the protractor test
-- update the drivers ans selenium jars using webdriver-manager update
+[e2e folder](https://github.com/ksathiya88/Angular_Learning/blob/master/e2e)
+                                   
+Also use this Angular project for running the protractor test     
+[project](https://github.com/ksathiya88/Angular_Learning)  
+                   
+**Starting the Angular project**      
+- clone the projectusing **git clone** ,
+- move to the folder **Angular_Learning** created by clone and do **npm install**
+- **ng serve** to start the project
+                 
+**Running the protractor test**    
+           
+- update the drivers ans selenium jars using **webdriver-manager update**   
+- start the selenium server using **webdriver-manager start**    
+- And inside the Angular_Learning folder run the command 
+  >node node_modules/protractor/bin/protractor e2e/protractor_jasmine.conf.js
+            
+This should run the protactor test using jasmine and you should be able to see       
+screenshots under reports. If you make the test fail also you should be also able to see     
+screenshots in the report.    
+  
 
 
 
